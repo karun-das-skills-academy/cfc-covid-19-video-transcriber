@@ -18,7 +18,7 @@ RUN mkdir -p /app/server/video_uploads
 RUN mkdir -p /app/server/output_transcriptions
 # RUN mkdir -p /app/server/cfc-starter/audio_extractions
 # RUN mkdir -p /app/server/cfc-starter/video_uploads
-RUN mkdir -p /app/server/ output_transcripts
+RUN mkdir -p /app/server/output_transcripts
 
 RUN chown -R :1024 /app
 # RUN chown 1001 /app/server/audio_extractions

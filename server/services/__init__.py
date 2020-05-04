@@ -54,7 +54,7 @@ def initServices(app):
 
     # Setup config
     # app.config['BASE'] = os.path.join(os.path.dirname(os.getcwd()),'cfc-covid-19-video-transcriber-starter') 
-    app.config['BASE'] = os.path.join(os.path.dirname(os.getcwd()),'/app/server/cfc-starter') 
+    app.config['BASE'] = os.path.join(os.path.dirname(os.getcwd()),'/app') 
     app.config['BASE'] = os.path.join(app.config['BASE'], 'server')
     app.config['UPLOAD_FOLDER'] = os.path.join(app.config['BASE'], 'video_uploads')
     app.config['AUDIO_FOLDER'] = os.path.join(app.config['BASE'], 'audio_extractions')

@@ -40,7 +40,7 @@ def upload_video():
     if file and allowed_file(file.filename):
         file_id = str(uuid.uuid1())
         # mqtt_topic = 'cfc-covid-19-video-transcriber-starter/'+ file_id
-        mqtt_topic = '/app/server/cfc-starter/'+ file_id
+        mqtt_topic = '/app/'+ file_id
         new_filename = file_id + '.'+ file.filename.split('.')[1]
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], new_filename)
         file.save(file_path)

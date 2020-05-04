@@ -16,23 +16,30 @@ RUN pip3 install --upgrade pip \
 RUN mkdir -p /app/server/audio_extractions
 RUN mkdir -p /app/server/video_uploads
 RUN mkdir -p /app/server/output_transcriptions
-RUN mkdir -p /cfc-covid-19-video-transcriber-starter/server/audio_extractions
-RUN mkdir -p /cfc-covid-19-video-transcriber-starter/server/video_uploads
-RUN mkdir -p /cfc-covid-19-video-transcriber-starter/server/output_transcripts
+# RUN mkdir -p /cfc-covid-19-video-transcriber-starter/server/audio_extractions
+# RUN mkdir -p /cfc-covid-19-video-transcriber-starter/server/video_uploads
+# RUN mkdir -p /cfc-covid-19-video-transcriber-starter/server/output_transcripts
 
-RUN chown 1001 /app/server/audio_extractions
-RUN chown 1001 /app/server/video_uploads
-RUN chown 1001 /app/server/output_transcriptions
-RUN chown 1001 /cfc-covid-19-video-transcriber-starter/server/audio_extractions
-RUN chown 1001 /cfc-covid-19-video-transcriber-starter/server/video_uploads
-RUN chown 1001 /cfc-covid-19-video-transcriber-starter/server/output_transcripts
+RUN chown :1024 /app
+# RUN chown 1001 /app/server/audio_extractions
+# RUN chown 1001 /app/server/video_uploads
+# RUN chown 1001 /app/server/output_transcriptions
+# RUN chown 1001 /cfc-covid-19-video-transcriber-starter/server/audio_extractions
+# RUN chown 1001 /cfc-covid-19-video-transcriber-starter/server/video_uploads
+# RUN chown 1001 /cfc-covid-19-video-transcriber-starter/server/output_transcripts
 
-RUN chmod 775 /app/server/audio_extractions
-RUN chmod 775 /app/server/video_uploads
-RUN chmod 775 /app/server/output_transcriptions
-RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/audio_extractions
-RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/video_uploads
-RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/output_transcripts
+RUN chmod 775 /app
+RUN chmod g+s /app
+RUN addgroup --gid 1024 mygroup
+RUN adduser --disabled-password --gecos "" --force-badname --ingroup 1024 myuser 
+USER myuser
+
+# RUN chmod 775 /app/server/audio_extractions
+# RUN chmod 775 /app/server/video_uploads
+# RUN chmod 775 /app/server/output_transcriptions
+# RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/audio_extractions
+# RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/video_uploads
+# RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/output_transcripts
 
 COPY . /app
 

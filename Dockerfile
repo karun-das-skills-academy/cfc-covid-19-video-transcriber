@@ -1,5 +1,4 @@
-FROM centos:latest
-# FROM registry.access.redhat.com/ubi8
+FROM registry.access.redhat.com/ubi8
 
 WORKDIR /app
 

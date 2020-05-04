@@ -21,6 +21,8 @@ RUN mkdir -p /app/server/output_transcriptions
 # RUN mkdir -p /app/server/cfc-starter/video_uploads
 RUN mkdir -p /app/server/output_transcripts
 
+COPY . /app
+
 RUN chown -R :1024 /app
 # RUN chown 1001 /app/server/audio_extractions
 # RUN chown 1001 /app/server/video_uploads
@@ -43,7 +45,7 @@ RUN chmod -R g+s /app
 # RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/video_uploads
 # RUN chmod 775 /cfc-covid-19-video-transcriber-starter/server/output_transcripts
 
-COPY . /app
+# COPY . /app
 
 ENV FLASK_APP=server/__init__.py
 CMD ["python3", "manage.py", "start", "0.0.0.0:3000"]

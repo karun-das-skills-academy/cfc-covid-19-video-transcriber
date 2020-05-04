@@ -37,6 +37,8 @@ RUN chmod -R g+s /app
 # RUN adduser --disabled-password --gecos "" --force-badname --ingroup 1024 myuser 
 # USER myuser
 
+USER 1024
+
 # RUN chmod 775 /app/server/audio_extractions
 # RUN chmod 775 /app/server/video_uploads
 # RUN chmod 775 /app/server/output_transcriptions

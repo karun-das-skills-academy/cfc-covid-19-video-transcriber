@@ -30,9 +30,10 @@ RUN chown :1024 /app
 
 RUN chmod 775 /app
 RUN chmod g+s /app
-RUN addgroup --gid 1024 mygroup
-RUN adduser --disabled-password --gecos "" --force-badname --ingroup 1024 myuser 
-USER myuser
+
+# RUN addgroup --gid 1024 mygroup
+# RUN adduser --disabled-password --gecos "" --force-badname --ingroup 1024 myuser 
+# USER myuser
 
 # RUN chmod 775 /app/server/audio_extractions
 # RUN chmod 775 /app/server/video_uploads
